@@ -1,17 +1,25 @@
 #include "shell.h"
 
 /**
- * read_line - reads the input string.
+ * get_inputs - get the input arguments from user
  *
- * @i_eof: return value of getline function
- * Return: input string
+ * Return: inputs
  */
-char *read_line(int *i_eof)
+input_t get_inputs(void)
 {
-	char *input = NULL;
-	size_t lineLen = 0;
+	size_t n = 0;
+	input_t inputs;
 
-	*i_eof = getline(&input, &lineLen, stdin);
+	inputs.line = NULL;
+	inputs.num = getline(&inputs.line, &n, stdin);
 
-	return (input);
+	if (mydata.num == -1)
+	{
+		if (feof(stdin))
+			exit(EXIT_SUCCESS);
+		else
+			exit(EXIT_FAILURE);
+	}
+
+	return (mydata);
 }
