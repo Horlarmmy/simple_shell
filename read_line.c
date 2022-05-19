@@ -13,7 +13,7 @@ input_t get_inputs(void)
 	inputs.line = NULL;
 	inputs.num = getline(&inputs.line, &n, stdin);
 
-	if (mydata.num == -1)
+	if (inputs.num == -1)
 	{
 		if (feof(stdin))
 			exit(EXIT_SUCCESS);
@@ -21,5 +21,5 @@ input_t get_inputs(void)
 			exit(EXIT_FAILURE);
 	}
 
-	return (mydata);
+	return (inputs);
 }
