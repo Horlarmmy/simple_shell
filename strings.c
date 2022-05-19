@@ -84,13 +84,13 @@ char *_strstr(char *haystack, const char *needle)
 
 /**
  * _strncat - concatenates two strings
- * @dest: destination string
- * @source: the string to add to dest string
+ * @first: destination string
+ * @second: the string to add to dest string
  * @n: integer number of elements to concat
  * Return: string
  */
 
-char *_strncat(char *dest, char *source, int n)
+char *_strncat(char *first, char *second, int n)
 {
 	int size = strlen(source) + n + 1;
 	char *str = malloc(sizeof(char) * size);
