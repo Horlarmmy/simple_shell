@@ -98,8 +98,8 @@ char *_strncat(char *first, char *second, int n)
 	if (str == NULL)
 		return (NULL);
 
-	strcpy(str, dest);
-	strncat(str, source, n);
+	strcpy(str, first);
+	strncat(str, second, n);
 
 	return (str);
 }
